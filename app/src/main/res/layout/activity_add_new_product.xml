@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.AddNewProductActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/floralgreen"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <TextView
+            android:id="@+id/tvIdNewProduct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="IDProduct"
+            tools:ignore="HardcodedText"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_margin="30dp"/>
+
+        <EditText
+            android:id="@+id/etNewName"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:ems="15"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_margin="30dp"
+            android:inputType="text"
+            android:hint="Name Product"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:id="@+id/etNewDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:ems="15"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_margin="30dp"
+            android:inputType="text"
+            android:hint="Description Product"
+            tools:ignore="HardcodedText" />
+
+
+        <Switch
+            android:id="@+id/sw1"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Product State"
+            tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml"
+            android:layout_margin="30dp"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:text="Activate Switch for Pending State"
+            tools:ignore="HardcodedText" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnSave2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="30dp"
+                android:text="Save"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/violet"
+                tools:ignore="ButtonStyle,HardcodedText" />
+
+            <Button
+                android:id="@+id/btnCancel3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="30dp"
+                android:text="Cancel"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/violet"
+                tools:ignore="ButtonOrder,ButtonStyle,HardcodedText" />
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
