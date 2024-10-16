@@ -10,6 +10,8 @@ public class Product implements Serializable {
     private String name;
     private String description;
     private boolean state;
+    private boolean lactosa;
+    private boolean gluten;
 
     /*Definimos el constructor de la clase por defecto*/
     public Product (){
@@ -17,11 +19,13 @@ public class Product implements Serializable {
     }
 
     /*Contructor de la clase con todos los parametros*/
-    public Product (int id, String name, String description, boolean state){
+    public Product (int id, String name, String description, boolean state, boolean lactosa, boolean gluten){
         this.id = id;
         this.name = name;
         this.description = description;
         this.state = state;
+        this.lactosa = lactosa;
+        this.gluten = gluten;
     }
 
     /*Getters y Setters de la clase */
@@ -59,6 +63,22 @@ public class Product implements Serializable {
     public void setState(boolean state) {
 
         this.state = state;
+    }
+
+    public boolean isLactosa() {
+        return lactosa;
+    }
+
+    public void setLactosa(boolean lactosa) {
+        this.lactosa = lactosa;
+    }
+
+    public boolean isGluten() {
+        return gluten;
+    }
+
+    public void setGluten(boolean gluten) {
+        this.gluten = gluten;
     }
 
     /*Funcion toString()*/

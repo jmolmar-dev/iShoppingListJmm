@@ -45,6 +45,10 @@ public class EditProductActivity extends AppCompatActivity {
         EditText detailsEdit = findViewById(R.id.etDescriptionEdit);
         @SuppressLint("UseSwitchCompatOrMaterialCode")
         Switch sw2 = findViewById(R.id.swChangueStatus);
+        @SuppressLint("UseSwitchCompatOrMaterialCode")
+        Switch swLactosa = findViewById(R.id.swChangueLactosa);
+        @SuppressLint("UseSwitchCompatOrMaterialCode")
+        Switch swGluten = findViewById(R.id.swChangueGluten);
         Button btnCancel = findViewById(R.id.btnCancel4);
         Button btnSave = findViewById(R.id.btnSave3);
 
@@ -85,6 +89,22 @@ public class EditProductActivity extends AppCompatActivity {
                 edit.setName(nameEdit.getText().toString());
                 edit.setDescription(detailsEdit.getText().toString());
                 edit.setState(!sw2.isChecked());
+
+                if (swLactosa.isChecked()){
+                    edit.setLactosa(true);
+                }else{
+                    edit.setLactosa(false);
+                }
+
+                if (swGluten.isChecked()){
+                    edit.setGluten(true);
+                } else{
+                    edit.setGluten(false);
+                }
+
+
+
+
                 Toast toast = new Toast(EditProductActivity.this);
                 /*Se informa al usuario que ha editado el producto con exito*/
                 toast.setText("Product Updated Successfully");

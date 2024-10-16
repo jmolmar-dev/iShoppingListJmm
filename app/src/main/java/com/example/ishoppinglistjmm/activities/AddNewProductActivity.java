@@ -41,7 +41,10 @@ public class AddNewProductActivity extends AppCompatActivity {
         EditText newDescription = findViewById(R.id.etNewDescription);
         @SuppressLint("UseSwitchCompatOrMaterialCode")
         Switch swState = findViewById(R.id.sw1);
-        TextView infoNew = findViewById(R.id.tvInfo);
+        @SuppressLint("UseSwitchCompatOrMaterialCode")
+        Switch swLactosa = findViewById(R.id.swLactosa);
+        @SuppressLint("UseSwitchCompatOrMaterialCode")
+        Switch swGluten = findViewById(R.id.swGluten);
         Button btnSave2 = findViewById(R.id.btnSave2);
         Button brnCancel3 = findViewById(R.id.btnCancel3);
 
@@ -67,6 +70,8 @@ public class AddNewProductActivity extends AppCompatActivity {
                 p.setName(newName.getText().toString());
                 p.setDescription(newDescription.getText().toString());
                 p.setState(swState.isChecked());
+                p.setLactosa(swLactosa.isChecked());
+                p.setGluten(swGluten.isChecked());
 
                 /*Comprobamos que los campos no se queden vacios a la hora de insertar un nuevo producto*/
                 if (p.getName().isEmpty()){
@@ -83,6 +88,8 @@ public class AddNewProductActivity extends AppCompatActivity {
                     newName.setText("");
                     newDescription.setText("");
                     swState.setChecked(false);
+                    swLactosa.setChecked(false);
+                    swGluten.setChecked(false);
                     Intent comeBack = new Intent(AddNewProductActivity.this,MainActivity.class);
                     startActivity(comeBack);
                 }

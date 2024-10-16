@@ -32,12 +32,15 @@ public class DetailActivity extends AppCompatActivity {
             return insets;
         });
 
+
         /*Obtenemos los componentes de la vista*/
         TextView tittleDetails = findViewById(R.id.tvTittleDetails);
         TextView idDetails = findViewById(R.id.tvIdDetails);
         TextView nameDetails = findViewById(R.id.tvNameDetails);
         TextView descriptionDetails = findViewById(R.id.tvDescriptionDetails);
         TextView stateDetails = findViewById(R.id.tvStateDetails);
+        TextView lactosaDetails = findViewById(R.id.tvLactosaDetails);
+        TextView glutenDetails = findViewById(R.id.tvGlutenDetails);
         Button edit = findViewById(R.id.btnEdit);
         Button cancel = findViewById(R.id.btnCancel);
 
@@ -56,6 +59,18 @@ public class DetailActivity extends AppCompatActivity {
                 stateDetails.setText("Pending purchase");
             }else{
                 stateDetails.setText("No Pending purchase");
+            }
+
+            if (product.isLactosa()){
+                lactosaDetails.setText("With Lactosa");
+            }else{
+                lactosaDetails.setText("Without Lactosa");
+            }
+
+            if (product.isGluten()){
+                glutenDetails.setText("With Gluten");
+            }else{
+                glutenDetails.setText("Without Gluten");
             }
 
         }

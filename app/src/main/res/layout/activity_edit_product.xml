@@ -57,7 +57,36 @@
             android:textSize="16sp"
             android:textStyle="bold"/>
 
+        <Switch
+            android:id="@+id/swChangueLactosa"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Changue Lactosa Status"
+            tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml"
+            android:layout_margin="15dp"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
 
+        <Switch
+            android:id="@+id/swChangueGluten"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Changue Gluten Status"
+            tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml"
+            android:layout_margin="15dp"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvInfo2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="If u want with Lactosa or Gluten, activate their switches and to disable, do not press them"
+            android:layout_margin="15dp"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            tools:ignore="HardcodedText" />
 
         <LinearLayout
             android:layout_width="match_parent"

@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 
 import com.example.ishoppinglistjmm.R;
 import com.example.ishoppinglistjmm.dataBase.DataBase;
@@ -19,6 +20,10 @@ import java.util.List;
 public class ProductAdapter extends ArrayAdapter<Product> {
 
     private List<Product> products;
+    private int color1;
+    private int color2;
+    private int color3;
+    private int colorDefault;
 
     /*Llamada al constructor del padre --> (contexto, idResource, lista de Objetos que queremos recorrer, en este caso, Producto)*/
     public ProductAdapter(@NonNull Context context, int resource, @NonNull List<Product> products) {
@@ -48,9 +53,32 @@ public class ProductAdapter extends ArrayAdapter<Product> {
         /*Modificamos los atributos de los componentes*/
         tvIDProduct.setText(String.valueOf(p.getId()));
         tvNameProduct.setText(p.getName());
+
+        if (p.isLactosa() && p.isGluten()){
+            color3 = ContextCompat.getColor(getContext(), R.color.color3);
+            tvIDProduct.setBackgroundColor(color3);
+            tvNameProduct.setBackgroundColor(color3);
+        }else if (p.isLactosa()){
+            color1 = ContextCompat.getColor(getContext(),R.color.color1);
+            tvIDProduct.setBackgroundColor(color1);
+            tvNameProduct.setBackgroundColor(color1);
+        }else if (p.isGluten()){
+            color2 = ContextCompat.getColor(getContext(), R.color.color2);
+            tvIDProduct.setBackgroundColor(color2);
+            tvNameProduct.setBackgroundColor(color2);
+        }else{
+            colorDefault = ContextCompat.getColor(getContext(),R.color.floralgreen);
+            tvIDProduct.setBackgroundColor(colorDefault);
+            tvNameProduct.setBackgroundColor(colorDefault);
+        }
+
+
+
         /*Finalmente, se devuelve la vista*/
         return convertView;
     }
+
+
 
     /*Metodo que se ejecutara al pulsar sobre el spinner, se le asociara una vista y al hacer clic
     * en el spinner, se nos mostrara el contenido del mismo. En caso de que la vista no este creada se creara
